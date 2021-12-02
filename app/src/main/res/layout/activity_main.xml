@@ -4,14 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
 
+
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    android:id="@+id/swipeRefreshLayout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycleViewFood"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/dong_mon_an"
+        android:id="@+id/recycleViewFood">
+<!--        android:visibility="visible">-->
+    </androidx.recyclerview.widget.RecyclerView>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:id="@+id/layoutLoading"
+        android:layout_gravity="center"
+        android:background="#40655F5E"
+        android:visibility="gone">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </LinearLayout>
